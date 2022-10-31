@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,30 +11,28 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("entrer un nombre :");
-            int p = Console.ReadLine();
-
-            while (p < 0)
+            int p = Convert.ToInt32(Console.ReadLine());
+            bool pr = true;
+            while (p <= 0)
             {
                 Console.WriteLine("entrer un nombre positif :");
-                int n = Console.ReadLine();
+                 p = Convert.ToInt32(Console.ReadLine());
             }
-            int r;
             for (int i = 2; i < p; i++)
             {
                 if ((p % i) == 0)
                 {
-                    
-                    r++;
+                    pr = false;
+                    break;
                 }
             }
-             if (r > 0)
+            if (!pr)
             {
-                Console.WriteLine(p + "ce nombre n'est pas premier ");
-                
+                Console.WriteLine(" ce nombre n'est pas premier ");
             }
             else
             {
-                Console.WriteLine(p + "ce nombre est premier ");
+                Console.WriteLine(" ce nombre est premier ");
             }
         }
     }
